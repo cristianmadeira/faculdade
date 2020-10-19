@@ -4,11 +4,11 @@ class Stack(BaseList):
         BaseList.__init__(self)
 
     def insert(self,element):
-        self.items.append(element)
+        aux = [element]
+        self.items = aux + self.items
         
     def remove(self):
         return self.items.pop()
     
     def all(self):
         return self.items
-
