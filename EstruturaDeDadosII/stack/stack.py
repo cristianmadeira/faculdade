@@ -8,7 +8,9 @@ class Stack(BaseList):
         self.items = aux + self.items
         
     def remove(self):
-        return self.items.pop()
+        element = self.items[0]
+        self.items.remove(element)
+        return element
     
     def all(self):
         return self.items
