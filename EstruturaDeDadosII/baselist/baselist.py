@@ -16,10 +16,10 @@ class BaseList(object):
     def insert(self,element = None):
         pass
     
-    @abstractmethod
     def remove(self):
-        pass
+        element = self.items[0]
+        self.items.remove(element)
+        return element
 
-    @abstractmethod
     def all(self):
-        pass
+        return self.items
