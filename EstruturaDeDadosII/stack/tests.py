@@ -25,7 +25,7 @@ class StackTest(unittest.TestCase):
         
         self.assertEqual(expected,result)
     
-    def all(self):
+    def test_all(self):
         stack = Stack()
 
         stack.insert('Cristian')
@@ -34,8 +34,9 @@ class StackTest(unittest.TestCase):
         stack.insert('Souza')
         stack.insert('Pereira')
 
-        expected = ['Cristian','Madeira','De','Souza','Pereira']
-        result = stack.items
+        
+        expected = ['Pereira', 'Souza', 'De', 'Madeira', 'Cristian']
+        result = stack.all()
 
         self.assertEqual(expected,result)
         
