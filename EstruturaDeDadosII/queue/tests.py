@@ -44,7 +44,7 @@ class QueeuTest(unittest.TestCase):
         queue.insert('Pereira')
 
         expected = ['Cristian','Madeira','De','Souza','Pereira']
-        result = queue.items
+        result = queue.all()
 
         self.assertEqual(expected,result)
         
