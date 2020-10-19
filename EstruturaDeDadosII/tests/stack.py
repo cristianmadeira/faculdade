@@ -19,8 +19,11 @@ class StackTest(unittest.TestCase):
 
     def test_remove(self):
         self.test_insert()
+        
+        expected = self.stack.items[0]
         result = self.stack.remove()
-        self.assertIsNotNone(result)
+        
+        self.assertEquals(expected,result)
         
 if __name__ == '__main__':
     unittest.main()
