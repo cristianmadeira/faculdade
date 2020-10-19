@@ -19,3 +19,7 @@ class BaseList(object):
     @abstractmethod
     def remove(self):
         pass
+
+    @abstractmethod
+    def all(self):
+        pass

@@ -26,12 +26,28 @@ class QueeuTest(unittest.TestCase):
         self.assertEquals(expected_size,resulted_size)
 
     def test_remove(self):
-        self.test_insert()
-        
-        expected = self.queue.items[0]
-        result = self.queue.remove()
+        queue = Queue()
+        queue.insert('Cristian')
+
+        expected = queue.items[0]
+        result = queue.remove()
         
         self.assertEquals(expected,result)
+    
+    def test_all(self):
+        queue = Queue()
+        
+        queue.insert('Cristian')
+        queue.insert('Madeira')
+        queue.insert('De')
+        queue.insert('Souza')
+        queue.insert('Pereira')
 
+        expected = ['Cristian','Madeira','De','Souza','Pereira']
+        result = queue.items
+
+        self.assertEquals(expected,result)
+        
+        
 if __name__ == '__main__':
     unittest.main()
