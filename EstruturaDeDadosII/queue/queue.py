@@ -1,4 +1,4 @@
-from base_list import BaseList
+from baselist.baselist import BaseList
 class Queue(BaseList):
     
     def insert(self,element):

@@ -1,5 +1,5 @@
 import unittest
-from classes.queue import Queue
+from .queue import Queue
 class QueeuTest(unittest.TestCase):
     
     def setUp(self):
@@ -8,7 +8,7 @@ class QueeuTest(unittest.TestCase):
     def test_size(self):
         result = self.queue.size()
         expected = 0
-        self.assertEquals(expected, result)
+        self.assertEqual(expected, result)
 
     def test_is_empty(self):
         result = self.queue.is_empty()
@@ -23,7 +23,7 @@ class QueeuTest(unittest.TestCase):
         resulted_is_empty = self.queue.is_empty()
         
         self.assertFalse(resulted_is_empty)
-        self.assertEquals(expected_size,resulted_size)
+        self.assertEqual(expected_size,resulted_size)
 
     def test_remove(self):
         queue = Queue()
@@ -32,7 +32,7 @@ class QueeuTest(unittest.TestCase):
         expected = queue.items[0]
         result = queue.remove()
         
-        self.assertEquals(expected,result)
+        self.assertEqual(expected,result)
     
     def test_all(self):
         queue = Queue()
@@ -46,7 +46,7 @@ class QueeuTest(unittest.TestCase):
         expected = ['Cristian','Madeira','De','Souza','Pereira']
         result = queue.items
 
-        self.assertEquals(expected,result)
+        self.assertEqual(expected,result)
         
         
 if __name__ == '__main__':

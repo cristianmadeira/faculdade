@@ -1,4 +1,4 @@
-from .base_list import BaseList
+from baselist.baselist import BaseList
 class Stack(BaseList):
     def __init__(self):
         BaseList.__init__(self)
