@@ -24,6 +24,20 @@ class StackTest(unittest.TestCase):
         result = self.stack.remove()
         
         self.assertEquals(expected,result)
+    
+    def all(self):
+        stack = Stack()
+
+        stack.insert('Cristian')
+        stack.insert('Madeira')
+        stack.insert('De')
+        stack.insert('Souza')
+        stack.insert('Pereira')
+
+        expected = ['Cristian','Madeira','De','Souza','Pereira']
+        result = stack.items
+
+        self.assertEquals(expected,result)
         
 if __name__ == '__main__':
     unittest.main()

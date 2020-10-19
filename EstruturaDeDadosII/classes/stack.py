@@ -8,4 +8,7 @@ class Stack(BaseList):
         
     def remove(self):
         return self.items.pop()
+    
+    def all(self):
+        return self.items
 
