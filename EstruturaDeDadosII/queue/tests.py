@@ -6,7 +6,7 @@ class QueeuTest(unittest.TestCase):
         self.queue = Queue()
     
     def test_size(self):
-        result = self.queue.size()
+        result = self.queue.size
         expected = 0
         self.assertEqual(expected, result)
 
@@ -18,7 +18,7 @@ class QueeuTest(unittest.TestCase):
         element = 'Cristian Madeira de Souza Pereira'
         self.queue.insert(element)
         
-        resulted_size = self.queue.size()
+        resulted_size = self.queue.size
         expected_size = 1
         resulted_is_empty = self.queue.is_empty()
         
@@ -29,7 +29,7 @@ class QueeuTest(unittest.TestCase):
         queue = Queue()
         queue.insert('Cristian')
 
-        expected = queue.items[0]
+        expected = 'Cristian'
         result = queue.remove()
         
         self.assertEqual(expected,result)

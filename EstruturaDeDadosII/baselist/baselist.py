@@ -14,16 +14,21 @@ class BaseList(object):
     def insert(self,element = None):
         pass
     
-    @abstractmethod
-    def remove(self):
-        pass
+    def remove(self) :
+        if self.is_empty():
+            raise Exception('Está vazia!')
+        else:
+            element = self.first_element
+            self.first_element = element.next
+            self.size = self.size - 1
+            return element.data
 
     def all(self):
         items = []
-        pointer = self.first_element
-        if pointer  == None:
+        if self.is_empty():
             raise Exception('Está vazia!')
         else:
+            pointer = self.first_element
             while pointer != None:
                 data = pointer.data
                 pointer = pointer.next
