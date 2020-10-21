@@ -6,6 +6,7 @@ class BaseList(object):
     
     size = 0
     first_element = None
+    last_element = None
 
     def is_empty(self):
         return self.size == 0
