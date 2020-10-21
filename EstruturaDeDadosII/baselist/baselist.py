@@ -7,6 +7,7 @@ class BaseList(object):
     size = 0
     first_element = None
     last_element = None
+    items = []
 
     def is_empty(self):
         return self.size == 0
@@ -27,15 +28,16 @@ class BaseList(object):
             return data
 
     def sort(self):
-        items = self.all()
+        if len(self.items) == 0:
+            self.items = self.all()
         for i in range(self.size-1):
             j = i + 1
             while( j < self.size):
-                if items[i] > items[j]:
-                    items[i],items[j] = self.swap(items[i],items[j])
+                if self.items[i] > self.items[j]:
+                    self.items[i],self.items[j] = self.swap(self.items[i],self.items[j])
                 j = j + 1
             i = i + 1
-        return items
+        return self.items
 
     def swap(self, var1, var2):
         aux = var1
@@ -44,7 +46,7 @@ class BaseList(object):
         return var1,var2
 
     def all(self):
-        items = []
+        self.items = []
         if self.is_empty():
             raise Exception('Está vazia!')
         else:
@@ -52,5 +54,5 @@ class BaseList(object):
             while element != None:
                 data = element.data
                 element = element.next
-                items.append(data)
-            return items
+                self.items.append(data)
+            return self.items
