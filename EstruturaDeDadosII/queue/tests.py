@@ -33,7 +33,35 @@ class QueeuTest(unittest.TestCase):
         result = queue.remove()
         
         self.assertEqual(expected,result)
+    def test_swap(self):
+        var1,var2 = 'a','b'
+
+        expected = ('b','a')
+        result =self.queue.swap(var1,var2)
+
+        self.assertEqual(expected,result)
+
+    def test_sort(self):
+        queue = Queue()
+
+        queue.insert('d')
+        queue.insert('c')
+        queue.insert('a')
+        queue.insert('b')
+         
+        
+
+        expected = ['a','b','c','d']
+        result = queue.sort()
+
+        self.assertEqual(expected,result)
+
+    def test_remove_queue_is_empty(self):
+        self.assertRaises(Exception,Queue().remove)
     
+    def test_to_list_when_queue_is_empty(self):
+        self.assertRaises(Exception,Queue().all)
+        
     def test_all(self):
         queue = Queue()
         
