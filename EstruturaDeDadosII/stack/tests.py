@@ -24,6 +24,34 @@ class StackTest(unittest.TestCase):
         result = self.stack.remove()
         
         self.assertEqual(expected,result)
+    def test_swap(self):
+        var1,var2 = 'a','b'
+
+        expected = ('b','a')
+        result =self.stack.swap(var1,var2)
+
+        self.assertEqual(expected,result)
+
+    def test_sort(self):
+        stack = Stack()
+
+        stack.insert('d')
+        stack.insert('c')
+        stack.insert('a')
+        stack.insert('b')
+         
+        
+
+        expected = ['a','b','c','d']
+        result = stack.sort()
+
+        self.assertEqual(expected,result)
+
+    def test_remove_stakc_is_empty(self):
+        self.assertRaises(Exception,Stack().remove)
+    
+    def test_to_list_when_stack_is_empty(self):
+        self.assertRaises(Exception,Stack().all)
     
     def test_all(self):
         stack = Stack()
