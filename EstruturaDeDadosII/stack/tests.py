@@ -6,7 +6,7 @@ class StackTest(unittest.TestCase):
         self.stack = Stack()
 
     def test_size(self):
-        self.assertEqual(self.stack.size(),0)
+        self.assertEqual(self.stack.size,0)
 
     def test_is_empty(self):
         self.assertTrue(self.stack.is_empty())
@@ -15,12 +15,12 @@ class StackTest(unittest.TestCase):
         element = 'Cristian'
         self.stack.insert(element)
         self.assertFalse(self.stack.is_empty())
-        self.assertEqual(self.stack.size(),1)
+        self.assertEqual(self.stack.size,1)
 
     def test_remove(self):
-        self.test_insert()
+        self.stack.insert('Cristian')
         
-        expected = self.stack.items[0]
+        expected = 'Cristian'
         result = self.stack.remove()
         
         self.assertEqual(expected,result)
@@ -33,12 +33,13 @@ class StackTest(unittest.TestCase):
         stack.insert('De')
         stack.insert('Souza')
         stack.insert('Pereira')
-
+        
         
         expected = ['Pereira', 'Souza', 'De', 'Madeira', 'Cristian']
         result = stack.all()
 
         self.assertEqual(expected,result)
+        self.assertEqual(stack.size,5)
         
 if __name__ == '__main__':
     unittest.main()
