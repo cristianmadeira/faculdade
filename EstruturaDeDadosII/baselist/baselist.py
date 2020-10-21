@@ -20,9 +20,11 @@ class BaseList(object):
             raise Exception('Está vazia!')
         else:
             element = self.first_element
+            data = element.data
             self.first_element = element.next
             self.size = self.size - 1
-            return element.data
+            del element
+            return data
 
     def sort(self):
         items = self.all()
