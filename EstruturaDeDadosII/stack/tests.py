@@ -40,8 +40,6 @@ class StackTest(unittest.TestCase):
         stack.insert('a')
         stack.insert('b')
          
-        
-
         expected = ['a','b','c','d']
         result = stack.sort()
 

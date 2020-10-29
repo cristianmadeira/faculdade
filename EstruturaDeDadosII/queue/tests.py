@@ -49,8 +49,6 @@ class QueeuTest(unittest.TestCase):
         queue.insert('a')
         queue.insert('b')
          
-        
-
         expected = ['a','b','c','d']
         result = queue.sort()
 
@@ -75,7 +73,58 @@ class QueeuTest(unittest.TestCase):
         result = queue.all()
 
         self.assertEqual(expected,result)
+
+    def test_find(self):
+        queue = Queue()
         
+        queue.insert('Cristian')
+        queue.insert('Madeira')
+        queue.insert('De')
+        queue.insert('Souza')
+        queue.insert('Pereira')
+        queue.sort()
+
+        expected = 'Cristian'
+        result = queue.find('Cristian')
+
+        self.assertEqual(expected,result)
+    
+    def test_find_when_element_greater_than_mid(self):
+        queue = Queue()
+        
+        queue.insert('Cristian')
+        queue.insert('Madeira')
+        queue.insert('De')
+        queue.insert('Souza')
+        queue.insert('Pereira')
+        queue.sort()
+
+        expected = 'Souza'
+        result = queue.find('Souza')
+
+        self.assertEqual(expected,result)
+
+    def test_find_when_list_is_empty(self):   
+        self.assertRaises(Exception,Queue().find,'Cristian')
+    
+    def test_find_element_not_found(self):
+        element = 'x'
+        queue = Queue()
+        
+        queue.insert('b')
+        queue.insert('a')
+        queue.insert('c')
+        
+        queue.sort()
+        self.assertRaises(Exception,queue.find,element)
+
+
+    def test_get_items_size(self):
+        self.assertEqual(0,Queue().get_items_size())
+    
+    def test_items_is_empty(self):
+        self.assertTrue(Queue().items_is_empty())
+
         
 if __name__ == '__main__':
     unittest.main()
