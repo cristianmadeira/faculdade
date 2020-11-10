@@ -1,8 +1,9 @@
 from baselist.baselist import BaseList
 from baselist.node import Node
+
+
 class Queue(BaseList):
-    
-    def insert(self,element):
+    def insert(self, element):
         node = Node(element)
 
         if self.first_element == None:
@@ -14,12 +15,3 @@ class Queue(BaseList):
             self.last_element = node
 
         self.size = self.size + 1
-
-    
-    
-
-
-
-
-    
-    
